@@ -22,9 +22,9 @@ import org.springframework.context.annotation.Import;
         DBConfig.class
 })
 @SpringBootApplication
-public class SampleWebStaticApplication {
+public class RadyouWebApplication {
     public static void main(String[] args) {
-        SpringApplication.run(SampleWebStaticApplication.class, args);
+        SpringApplication.run(RadyouWebApplication.class, args);
     }
 }
 

@@ -1,19 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppComponent } from './app.component';
+import {appRoutingProviders, routes, routing} from './routes';
+import {RouterModule} from '@angular/router';
 
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
     BrowserModule,
-    MDBBootstrapModule.forRoot()
+    routing,
+    MDBBootstrapModule.forRoot(),
+
   ],
-  schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [],
+  declarations: [
+  AppComponent
+],
+  providers: [appRoutingProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
