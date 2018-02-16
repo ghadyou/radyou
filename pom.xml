@@ -62,12 +62,6 @@
                             <version>7.7</version>
                         </dependency>
                     </dependencies>
-                    <configuration>
-                        <failsOnError>true</failsOnError>
-                        <configLocation>etc/checkstyle.xml</configLocation>
-                        <consoleOutput>true</consoleOutput>
-                        <excludes>**/Application.java</excludes>
-                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>

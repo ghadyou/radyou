@@ -1,1 +1,1 @@
-web java -Dserver.port=$PORT $JAVA_OPTS -jar target/radyou-0-SNAPSHOT.jar
+web java -Dserver.port=$PORT $JAVA_OPTS -jar backend/target/radyou.jar

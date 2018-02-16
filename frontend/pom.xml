@@ -73,8 +73,7 @@
             <phase>test</phase>
             <configuration>
               <arguments>test</arguments>
-              <!-- TODO : check why it is not recognized -->
-              <!--<failOnError>true</failOnError>-->
+              <failOnError>true</failOnError>
             </configuration>
           </execution>
         </executions>

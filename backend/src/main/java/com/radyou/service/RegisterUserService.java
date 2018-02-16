@@ -4,7 +4,6 @@ import com.radyou.domain.User;
 import com.radyou.repo.UserRepository;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -18,8 +17,6 @@ public class RegisterUserService {
     @Autowired
     private UserRepository userRepository;
 
-    @Autowired
-    private PasswordEncoder encoder;
 
     public String generateConfirmationKey() {
     	return UUID.randomUUID().toString();
@@ -33,7 +30,7 @@ public class RegisterUserService {
             throw new RuntimeException("email is occupied!");
         }
 
-        User user = new User(username, encoder.encode(password), email, confirmationKey);
+        User user = new User(username, password, email, confirmationKey);
 
         //TODO: send email
 

@@ -7,14 +7,12 @@ import com.radyou.repo.MemberRepository;
 import org.apache.log4j.Logger;
 import org.nextrtc.signalingserver.api.dto.NextRTCMember;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 
 @Service
 @Transactional
-@PreAuthorize(value = "USER")
 public class SessionOpenedService {
 
     private static final Logger log = Logger.getLogger(SessionOpenedService.class);
