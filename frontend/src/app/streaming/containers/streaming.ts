@@ -6,7 +6,7 @@ import {WebsocketService} from '../services/websocket-service';
   selector: 'radyou-streaming',
   template: `
     <div class="video">
-      <video controls (click)="toggleVideo()" #videoPlayer>
+      <video controls (click)="toggleVideo($event)" #videoPlayer>
         <source src="{{videoSource}}" type="video/mp4" />
         Browser not supported
       </video>
@@ -15,7 +15,8 @@ import {WebsocketService} from '../services/websocket-service';
   `]
 })
 export class StreamingComponent  implements OnInit{
-  audio: Audio;
+  videoSource;
+  audio;
   @ViewChild('videoPlayer') videoplayer: any;
   constructor(private wsService: WebsocketService) {
   }
