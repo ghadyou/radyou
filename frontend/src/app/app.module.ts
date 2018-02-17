@@ -1,25 +1,38 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { AppComponent } from './app.component';
-import {appRoutingProviders, routing} from './routes';
-import { AppFooterComponent } from './app-footer/app-footer.component';
-import { AppHeaderComponent } from './app-header/app-header.component';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
 
+import {StoreModule} from '@ngrx/store';
+import {StoreRouterConnectingModule} from '@ngrx/router-store';
+
+import {AppComponent} from './app.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import 'hammerjs';
+
+import {SharedModule} from './shared/shared.module';
+
+import {HeaderComponent} from './components/header/header.component';
+import {SidebarComponent} from './components/sidebar/sidebar.component';
+
+import {routes} from './app.routes';
+import {initialState, reducers} from './store';
+import {StreamingModule} from './streaming/streaming.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppFooterComponent,
-    AppHeaderComponent
+    HeaderComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
-    routing,
-    MDBBootstrapModule.forRoot(),
-
+    BrowserAnimationsModule,
+    SharedModule.forRoot(),
+    RouterModule.forRoot(routes),
+    StoreRouterConnectingModule,
+    StoreModule.forRoot(reducers, <any>initialState),
+    StreamingModule
   ],
-  providers: [appRoutingProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
