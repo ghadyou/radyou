@@ -23,9 +23,9 @@ public class SessionOpenedService {
     private AuthUtils authUtils;
 
     public void execute(NextRTCMember member) {
-        User user = authUtils.getAuthenticatedUser(member.getSession().getUserPrincipal());
+        //User user = authUtils.getAuthenticatedUser(member.getSession().getUserPrincipal());
 
-        createConversationMemberFor(member.getId(), user);
+        createConversationMemberFor(member.getId(), null);
     }
 
     private void createConversationMemberFor(String memberId, User user) {
